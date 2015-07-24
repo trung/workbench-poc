@@ -6,5 +6,5 @@ zuul:
       url: http://localhost:8082
     resource:
       url: http://localhost:9000
-security.user.password: password
+security.basic.enabled: false
 management.context-path: /manage

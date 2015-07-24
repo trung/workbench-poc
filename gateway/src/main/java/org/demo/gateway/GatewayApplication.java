@@ -22,7 +22,13 @@ public class GatewayApplication {
 	
 	@RequestMapping("/user")
 	public Principal user(Principal user) {
-		return user;
+		return new Principal() {
+			
+			@Override
+			public String getName() {
+				return "Demo";
+			}
+		};
 	}
 	
 	public static void main(String[] args) {
@@ -37,11 +43,8 @@ public class GatewayApplication {
 		protected void configure(HttpSecurity http) throws Exception {
 			http.headers().addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsMode.SAMEORIGIN))
 					.and()
-					.httpBasic()
-					.and()
-					.authorizeRequests()
-					.antMatchers("/index.html", "/home.html", "/login.html",
-							"/").permitAll().anyRequest().authenticated();
+					.httpBasic().disable()
+					.authorizeRequests().anyRequest().permitAll();
 		}
 	}
 }

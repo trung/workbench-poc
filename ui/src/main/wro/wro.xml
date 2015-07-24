@@ -9,5 +9,6 @@
 	</group>
 	<group name="public">
 		<js>webjar:iframe-resizer/2.8.5/iframeResizer.contentWindow.min.js</js>
+		<js>file:${project.basedir}/src/main/wro/child.js</js>
 	</group>
 </groups>
