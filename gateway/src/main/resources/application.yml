@@ -8,3 +8,4 @@ zuul:
       url: http://localhost:9000
 security.basic.enabled: false
 management.context-path: /manage
+spring.thymeleaf.cache: false
